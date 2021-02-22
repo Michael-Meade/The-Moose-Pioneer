@@ -3,13 +3,20 @@ import json
 import os
 class Read():
     def html_start(self):
-        r = open("templates/port_scan_template_start.html",'r')
+        r = open("templates/html_template_start.html",'r')
         return r.read()
 
     def html_end(self):
-        r = open("templates/port_scan_template_end.html",'r')
+        r = open("templates/html_template_end.html",'r')
         return r.read()
 
+    def html_table_end(self):
+        r = open("templates/html_table_template_end.html",'r')
+        return r.read()
+
+    def html_table_start(self):
+        r = open("templates/html_table_template_start.html",'r')
+        return r.read()
 
 class Template():
     def port_scan(self, name, protocol, portid, state, reason):
@@ -82,27 +89,47 @@ class Scan():
         # adds the first part of the HTML file to
         # the list. like the CSS part, the html and body 
         html_out.append(r.html_start())
+        html_out.append(r.html_table_start())
+        open_port = []
         for i in scan:
             name      = i['service']['name']
             protocol  = i['protocol']
             portid    = i['portid']
             state     = i['state']
             reason    = i['reason']
+            if str(state) == "open":
+                open_port.append([ str(state), str(name), str(portid)])
+
+
             # Takes the input ( name, protocolm etc) and adds HTML to to make the 
             # rows of the tables
             ps = t.port_scan(name, protocol, portid, state, reason)
             # earlier in the code we called the html_start method
             # and storedi to in a list. We now add the rows of the HMTL table to 
             # the list
-            html_out.append(ps)
-        
 
-        msg = "<center>The table below shows the results of the port scan on (IP).<br></center>"
+            html_out.append(ps)
+
+
+        msg  = "<center>The table below shows the results of the port scan on (IP).<br></center>"
         html_out.append(str(msg.replace("(IP)", ip)))
         # adds the closing stuff so the  browser will show it the right way.
-        html_out.append(r.html_end())
+        html_out.append(r.html_table_end())
+        if len(open_port) > 0:
+            msg3 = "The (SERVICE) service has port (PORT) open."
+            msg_list = []
+            msg_list.append("<center><br><br>")
+            for i in open_port:
+
+                msg_list.append(str(msg3.replace("(SERVICE)", i[1]).replace("(PORT)", i[2])))
+
+        msg_port = ' '.join(msg_list)
+        html = '\n'.join(html_out)
+        html_out.append(msg_port)
+        html_out.append("</center>")
         html = '\n'.join(html_out)
         write.write_text("ports_scan.html", str(html))
 
 scan = Scan("hackex.net")
 scan.top_port_scan()
+#scan.service_version()
