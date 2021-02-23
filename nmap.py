@@ -17,12 +17,19 @@ class Read():
     def html_table_start(self):
         r = open("templates/html_table_template_start.html",'r')
         return r.read()
+    def html_table_start(self):
+        r = open("templates/html_table_template_start.html",'r')
+        return r.read()
+    def html_service_start(self):
+        r = open("templates/html_table_service.html",'r')
+        return r.read()
 
 class Template():
     def port_scan(self, name, protocol, portid, state, reason):
         return "<tr><td>" + name + "</td>\n" + "<td>" + protocol + "</td>\n" + '<td>' + portid + "</td>\n" + "<td>" + state + "</td>\n" + "<td>" + reason + "</td></tr>" 
 
-
+    def service_scan(self, name, product, version, extrainfo, portid, state):
+        return "<tr><td style='white'>" + name + "</td>\n" + "<td style='white'>" + product + "</td>\n" + "<td style='white'>" + version + "</td>\n" + "<td>" + extrainfo + "</td>\n" + "<td>" + portid + "</td>\n" + "<td>" + state + "</td></tr>"
 
 
 class FileUtils:
@@ -44,7 +51,7 @@ class FileUtils:
 
     # Makes it easy to save the output to a text file
     def write_text(self, file_name, data):
-        with open(os.path.join("scans", self.ip, file_name), 'w') as outfile:
+        with open(os.path.join("scans", self.ip, file_name), 'a') as outfile:
             outfile.write(data)
 
     # Makes it easy to save the output to a json file. 
@@ -66,7 +73,54 @@ class Scan():
     def service_version(self):
         # get services versions
         result = self.nmap.nmap_version_detection(self.ip)
-        print(result)
+        ip   = list(result.keys())[0]
+        scan = list(result[ip]["ports"])
+        write = FileUtils(ip)
+        t = Template()
+        # this calls gets the Read() class
+        # we store it as a instance variable 
+        # so we can get the first half of the HMTL and
+        # the last part of the HTML. 
+        r = Read()
+        html_out = []
+        #html_out.append(r.html_start())
+        html_out.append("<br><br>")
+        html_out.append(r.html_service_start())
+        for i in scan:
+            #print(i['service']['product'])
+            name      = i['service']['name']
+            portid    = i['portid']
+            state     = i['state']
+            if 'product' in i['service']:
+                #print(i["service"]["product"])
+                product   = i['service']['product']
+            else:
+                product   = "Null"
+
+
+            if 'extrainfo' in i['service']:
+                extrainfo = i['service']['extrainfo']
+            else:
+                extrainfo = "Null"
+
+
+            if 'version' in i['service']:
+                version  = i['service']['version']
+            else:
+                version  = "Null"
+
+            
+           
+            
+            ps = t.service_scan(name, product, version, extrainfo, portid, state)
+            html_out.append(ps)
+        
+        html_out.append(r.html_table_end())
+        msg = "<center>The table above shows more information about the services that are running on (IP).</center>"
+        html_out.append(msg.replace("(IP)", ip))
+        html_out.append(r.html_end())
+        html = '\n'.join(html_out)
+        write.write_text("ports_scan.html", str(html))
 
     def top_port_scan(self):
         # Scan the top ports
@@ -118,18 +172,22 @@ class Scan():
         if len(open_port) > 0:
             msg3 = "The (SERVICE) service has port (PORT) open."
             msg_list = []
-            msg_list.append("<center><br><br>")
+            msg_list.append("<center><br>")
             for i in open_port:
 
                 msg_list.append(str(msg3.replace("(SERVICE)", i[1]).replace("(PORT)", i[2])))
+
 
         msg_port = ' '.join(msg_list)
         html = '\n'.join(html_out)
         html_out.append(msg_port)
         html_out.append("</center>")
         html = '\n'.join(html_out)
+        #html_out.append(r.html_end())
+        html = '\n'.join(html_out)
+        msg_list.append("<br><br>")
         write.write_text("ports_scan.html", str(html))
 
-scan = Scan("hackex.net")
+scan = Scan("utica.edu")
 scan.top_port_scan()
-#scan.service_version()
+scan.service_version()
