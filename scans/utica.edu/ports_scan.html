@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+ <!-- #696969 -->
 <style>
     body {
-        background: #696969;
+
+        background:  #304254;
         position: relative;
         padding: 0; margin: 0;
     }
     table, td, th {
         border: 1px solid black;
         border-collapse: collapse;
+        font-size: 30px;
+        color: white;
     }
-  
+    .body {
+        font-size: 30px;
+        color: white;
+    }
     table.center {
       margin-left: auto; 
       margin-right: auto;
-
+      font-size: 30px;
     }
 </style>
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Utica_College.png"  width="150" height="250"></center>
@@ -30,60 +36,90 @@
     <th>Reason</th>
   </tr>
   <tr>
-<tr><td>ftp</td>
-<td>tcp</td>
-<td>21</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>ssh</td>
-<td>tcp</td>
-<td>22</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>telnet</td>
-<td>tcp</td>
-<td>23</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>smtp</td>
-<td>tcp</td>
-<td>25</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>http</td>
-<td>tcp</td>
-<td>80</td>
-<td>open</td>
-<td>syn-ack</td></tr>
-<tr><td>pop3</td>
-<td>tcp</td>
-<td>110</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>netbios-ssn</td>
-<td>tcp</td>
-<td>139</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>https</td>
-<td>tcp</td>
-<td>443</td>
-<td>open</td>
-<td>syn-ack</td></tr>
-<tr><td>microsoft-ds</td>
-<td>tcp</td>
-<td>445</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<tr><td>ms-wbt-server</td>
-<td>tcp</td>
-<td>3389</td>
-<td>filtered</td>
-<td>no-response</td></tr>
-<center>The table below shows the results of the port scan on 72.237.4.113.<br></center>
+	<tr>
+		<td>ftp</td>
+		<td>tcp</td>
+		<td>21</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>ssh</td>
+		<td>tcp</td>
+		<td>22</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>telnet</td>
+		<td>tcp</td>
+		<td>23</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>smtp</td>
+		<td>tcp</td>
+		<td>25</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>http</td>
+		<td>tcp</td>
+		<td>80</td>
+		<td>open</td>
+		<td>syn-ack</td>
+	</tr>
+
+	<tr>
+		<td>pop3</td>
+		<td>tcp</td>
+		<td>110</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>netbios-ssn</td>
+		<td>tcp</td>
+		<td>139</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>https</td>
+		<td>tcp</td>
+		<td>443</td>
+		<td>open</td>
+		<td>syn-ack</td>
+	</tr>
+
+	<tr>
+		<td>microsoft-ds</td>
+		<td>tcp</td>
+		<td>445</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+	<tr>
+		<td>ms-wbt-server</td>
+		<td>tcp</td>
+		<td>3389</td>
+		<td>filtered</td>
+		<td>no-response</td>
+	</tr>
+
+<center><font color=white>The table below shows the results of the port scan on 72.237.4.113.<br></font></center>
 </tr>
 </table>
-<center><br> The http service has port 80 open. The https service has port 443 open.
+<center><br> <font color=white>The http service has port 80 open.</font> <font color=white>The https service has port 443 open.</font>
 </center><br><br>
 <table class="center">
   <tr>
@@ -95,27 +131,36 @@
     <th>State</th>
   </tr>
   <tr>
-<tr><td style='white'>http</td>
-<td style='white'>Apache httpd</td>
-<td style='white'>2.4.41</td>
-<td>(Unix) OpenSSL/1.1.0l PHP/7.1.33</td>
-<td>80</td>
-<td>open</td></tr>
-<tr><td style='white'>http</td>
-<td style='white'>Apache httpd</td>
-<td style='white'>2.4.41</td>
-<td>(Unix) OpenSSL/1.1.0l PHP/7.1.33</td>
-<td>443</td>
-<td>open</td></tr>
-<tr><td style='white'>http-proxy</td>
-<td style='white'>Null</td>
-<td style='white'>Null</td>
-<td>Null</td>
-<td>8080</td>
-<td>closed</td></tr>
+	<tr>
+		<td>http</td>
+		<td>Apache httpd</td>
+		<td>2.4.41</td>
+		<td>(Unix) OpenSSL/1.1.0l PHP/7.1.33</td>
+		<td>80</td>
+		<td>open</td>
+	</tr>
+
+	<tr>
+		<td>http</td>
+		<td>Apache httpd</td>
+		<td>2.4.41</td>
+		<td>(Unix) OpenSSL/1.1.0l PHP/7.1.33</td>
+		<td>443</td>
+		<td>open</td>
+	</tr>
+
+	<tr>
+		<td>http-proxy</td>
+		<td>Null</td>
+		<td>Null</td>
+		<td>Null</td>
+		<td>8080</td>
+		<td>closed</td>
+	</tr>
+
 </tr>
 </table>
-<center>The table above shows more information about the services that are running on 72.237.4.113.</center>
+<center><font color=white>The table above shows more information about the services that are running on 72.237.4.113.</font></center>
 </body>
 </html><br><br>
 <table class="center">
@@ -124,31 +169,67 @@
     <th>Hostname</th>
   </tr>
   <tr>
-<tr><td>192.168.25.9</td>
-<td>mysql.utica.edu</td></tr>
-<tr><td>192.168.25.155</td>
-<td>test.utica.edu</td></tr>
-<tr><td>72.237.4.100</td>
-<td>ns1.utica.edu</td></tr>
-<tr><td>72.237.4.102</td>
-<td>ns2.utica.edu</td></tr>
-<tr><td>72.237.4.90</td>
-<td>ldap.utica.edu</td></tr>
-<tr><td>72.237.4.252</td>
-<td>vpn.utica.edu</td></tr>
-<tr><td>72.237.4.119</td>
-<td>beta.utica.edu</td></tr>
-<tr><td>72.237.4.113</td>
-<td>mail.utica.edu</td></tr>
-<tr><td>72.237.4.113</td>
-<td>www.utica.edu</td></tr>
-<tr><td>72.237.4.8</td>
-<td>chat.utica.edu</td></tr>
-<tr><td>72.237.4.96</td>
-<td>smtp.utica.edu</td></tr>
-<tr><td>72.237.4.113</td>
-<td>helpdesk.utica.edu</td></tr>
-<center>The table below shows the results of the DNS scan of utica.edu.<br></center>
+	<tr>
+		<td>192.168.25.9</td>
+		<td>mysql.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>192.168.25.155</td>
+		<td>test.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.100</td>
+		<td>ns1.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.102</td>
+		<td>ns2.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.90</td>
+		<td>ldap.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.252</td>
+		<td>vpn.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.119</td>
+		<td>beta.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.113</td>
+		<td>mail.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.113</td>
+		<td>www.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.8</td>
+		<td>chat.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.96</td>
+		<td>smtp.utica.edu</td>
+	</tr>
+
+	<tr>
+		<td>72.237.4.113</td>
+		<td>helpdesk.utica.edu</td>
+	</tr>
+
+<center><font  color=white>The table below shows the results of the DNS scan of utica.edu.<br></font></center>
 </tr>
 </table>
 </body>

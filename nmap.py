@@ -29,13 +29,13 @@ class Read():
 
 class Template():
     def port_scan(self, name, protocol, portid, state, reason):
-        return "<tr><td>" + name + "</td>\n" + "<td>" + protocol + "</td>\n" + '<td>' + portid + "</td>\n" + "<td>" + state + "</td>\n" + "<td>" + reason + "</td></tr>" 
+        return "\t<tr>\n\t\t<td>" + name + "</td>\n" + "\t\t<td>" + protocol + "</td>\n" + '\t\t<td>' + portid + "</td>\n" + "\t\t<td>" + state + "</td>\n" + "\t\t<td>" + reason + "</td>\n\t</tr>\n" 
 
     def service_scan(self, name, product, version, extrainfo, portid, state):
-        return "<tr><td style='white'>" + name + "</td>\n" + "<td style='white'>" + product + "</td>\n" + "<td style='white'>" + version + "</td>\n" + "<td>" + extrainfo + "</td>\n" + "<td>" + portid + "</td>\n" + "<td>" + state + "</td></tr>"
+        return "\t<tr>\n\t\t<td>" + name + "</td>\n" + "\t\t<td>" + product + "</td>\n" + "\t\t<td>" + version + "</td>\n" + "\t\t<td>" + extrainfo + "</td>\n" + "\t\t<td>" + portid + "</td>\n" + "\t\t<td>" + state + "</td>\n\t</tr>\n"
 
     def dns_scan(self, address, hostname):
-        return "<tr><td>" + address + "</td>\n" + "<td>" + hostname + "</td></tr>"
+        return "\t<tr>\n\t\t<td>" + address + "</td>\n" + "\t\t<td>" + hostname + "</td>\n\t</tr>\n"
 
 class FileUtils:
     def __init__(self, ip):
@@ -73,6 +73,7 @@ class Scan():
         # do:  self.nmap.nmap_version_detection(self.ip)aaaaa
         # For python to use the variable. WE NEED to have self. infront
         self.nmap = nmap3.Nmap()
+
 
 
     def service_version(self):
@@ -126,7 +127,7 @@ class Scan():
             html_out.append(ps)
         
         html_out.append(r.html_table_end())
-        msg = "<center>The table above shows more information about the services that are running on (IP).</center>"
+        msg = "<center><font color=white>The table above shows more information about the services that are running on (IP).</font></center>"
         html_out.append(msg.replace("(IP)", ip))
         html_out.append(r.html_end())
         html = '\n'.join(html_out)
@@ -151,7 +152,7 @@ class Scan():
             dns = t.dns_scan(addr, hostname)
             html_out.append(dns)
 
-        msg  = "<center>The table below shows the results of the DNS scan of (IP).<br></center>"
+        msg  = "<center><font  color=white>The table below shows the results of the DNS scan of (IP).<br></font></center>"
         html_out.append(str(msg.replace("(IP)", ip)))
         html_out.append(r.html_table_end())
         html_out.append(r.html_end())
@@ -204,12 +205,12 @@ class Scan():
             html_out.append(ps)
 
 
-        msg  = "<center>The table below shows the results of the port scan on (IP).<br></center>"
+        msg  = "<center><font color=white>The table below shows the results of the port scan on (IP).<br></font></center>"
         html_out.append(str(msg.replace("(IP)", ip)))
         # adds the closing stuff so the  browser will show it the right way.
         html_out.append(r.html_table_end())
         if len(open_port) > 0:
-            msg3 = "The (SERVICE) service has port (PORT) open."
+            msg3 = "<font color=white>The (SERVICE) service has port (PORT) open.</font>"
             msg_list = []
             msg_list.append("<center><br>")
             for i in open_port:
@@ -231,3 +232,4 @@ scan = Scan("utica.edu")
 scan.top_port_scan()
 scan.service_version()
 scan.dns_scan()
+#scan.list_scan()
