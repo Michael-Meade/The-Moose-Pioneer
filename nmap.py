@@ -23,6 +23,9 @@ class Read():
     def html_service_start(self):
         r = open("templates/html_table_service.html",'r')
         return r.read()
+    def html_table_dns_start(self):
+        r = open("templates/html_table_template_start_dns.html", "r")
+        return r.read()
 
 class Template():
     def port_scan(self, name, protocol, portid, state, reason):
@@ -31,6 +34,8 @@ class Template():
     def service_scan(self, name, product, version, extrainfo, portid, state):
         return "<tr><td style='white'>" + name + "</td>\n" + "<td style='white'>" + product + "</td>\n" + "<td style='white'>" + version + "</td>\n" + "<td>" + extrainfo + "</td>\n" + "<td>" + portid + "</td>\n" + "<td>" + state + "</td></tr>"
 
+    def dns_scan(self, address, hostname):
+        return "<tr><td>" + address + "</td>\n" + "<td>" + hostname + "</td></tr>"
 
 class FileUtils:
     def __init__(self, ip):
@@ -71,11 +76,16 @@ class Scan():
 
 
     def service_version(self):
+        # used to save the file
+        # this is different then ip because
+        # the variable ip gets its result from 
+        # the scan results.
+        ips = self.ip
         # get services versions
         result = self.nmap.nmap_version_detection(self.ip)
         ip   = list(result.keys())[0]
         scan = list(result[ip]["ports"])
-        write = FileUtils(ip)
+        write = FileUtils(ips)
         t = Template()
         # this calls gets the Read() class
         # we store it as a instance variable 
@@ -122,7 +132,36 @@ class Scan():
         html = '\n'.join(html_out)
         write.write_text("ports_scan.html", str(html))
 
+    def dns_scan(self):
+        results = self.nmap.nmap_dns_brute_script(self.ip)
+        ip      = self.ip
+        write   = FileUtils(ip)
+        t = Template()
+        # this calls gets the Read() class
+        # we store it as a instance variable 
+        # so we can get the first half of the HMTL and
+        # the last part of the HTML. 
+        r = Read()
+        html_out = []
+        html_out.append("<br><br>")
+        html_out.append(r.html_table_dns_start())
+        for i in results:
+            addr     = i['address']
+            hostname = i['hostname']
+            dns = t.dns_scan(addr, hostname)
+            html_out.append(dns)
+
+        msg  = "<center>The table below shows the results of the DNS scan of (IP).<br></center>"
+        html_out.append(str(msg.replace("(IP)", ip)))
+        html_out.append(r.html_table_end())
+        html_out.append(r.html_end())
+        html = '\n'.join(html_out)
+        write.write_text("ports_scan.html", str(html))
+
+
     def top_port_scan(self):
+        # this is for the file
+        ips = self.ip
         # Scan the top ports
         result = self.nmap.scan_top_ports(self.ip)
         # nmap outputs the results in JSON 
@@ -132,7 +171,7 @@ class Scan():
         # variable IP so we can use later.
         ip   = list(result.keys())[0]
         scan = list(result[ip]["ports"])
-        write = FileUtils(ip)
+        write = FileUtils(ips)
         t = Template()
         # this calls gets the Read() class
         # we store it as a instance variable 
@@ -191,3 +230,4 @@ class Scan():
 scan = Scan("utica.edu")
 scan.top_port_scan()
 scan.service_version()
+scan.dns_scan()
