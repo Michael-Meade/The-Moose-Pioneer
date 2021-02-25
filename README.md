@@ -4,7 +4,7 @@
 
 ### scans folder
 
-The scan folder is where all the results of the scan go for that domain. Inside the scans directory the code will create a new folder of the domain or IP that was inputed. For example, if we scan the IP 127.0.0.1 the code will create a new directory inside the scans folder with the name of 127.0.0.2. Inside 127.0.0.1 is where the program will store all the results.
+The scan folder is where all the results of the scan go for that domain. Inside the scans directory the code will create a new folder of the domain or IP that was inputed. For example, if we scan the IP 127.0.0.1 the code will create a new directory inside the scans folder with the name of 127.0.0.1. Inside 127.0.0.1 is where the program will store all the results.
 
 
 ### Template class
@@ -30,4 +30,9 @@ This project assumes that the subdomain3 directory is in the projects main direc
 ```
 cd subdomain3 & python brutedns.py -d targetdomain -s high -l 5
 ```
-The class will use Python's replace method to replace ```targetdomain``` with the domain or IP that was inputed.  
+The class will use Python's replace method to replace ```targetdomain``` with the domain or IP that was inputed.  The run method will call the command method in which will return the command above, the code will then use Python's ```os``` module to run the command. 
+
+The code for subdomain will always output the results of the scan in the follow directory path:
+
+```subdomain3/results/domain```
+Two ```csv``` files should be inside that directory after the scan, the subdomain class will then move the contents of that directory and move the files into the scan folder. 
