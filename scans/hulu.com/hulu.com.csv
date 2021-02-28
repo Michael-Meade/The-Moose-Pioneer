@@ -1,0 +1,77 @@
+DOMAIN,CDN,CNAME,IP
+vortex.hulu.com,Yes,['vortex.hulu.com.akadns.net.'],"['34.213.169.250', '35.162.146.227', '44.239.171.189', '52.26.248.204', '52.32.16.237', '52.32.97.37', '54.148.54.255', '54.187.47.3']"
+ib.hulu.com,Yes,"['san.dual-hulu.com.edgekey.net.', 'e1042.dscj.akamaiedge.net.']",['23.56.0.60']
+img4.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.77.87']
+player.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.47.131.244']
+t2.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.198.103.37']
+img3.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.77.87']
+darwin.hulu.com,Yes,['darwin.hulu.com.akadns.net.'],['8.28.124.138']
+vpn3.hulu.com,No,Null,['208.91.159.190']
+config.hulu.com,Yes,"['config.hulu.com.edgesuite.net.', 'a761.b.akamai.net.']","['223.119.248.16', '223.119.248.24']"
+advertising.hulu.com,No,['hulu-advertising.go-vip.net.'],['192.0.66.112']
+spanish.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.77.87']
+engage.hulu.com,Yes,"['san.dual-hulu.com.edgekey.net.', 'e1042.dscj.akamaiedge.net.']",['23.56.0.60']
+img2.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.77.87']
+redirect.hulu.com,Yes,['hulu.map.fastly.net.'],['151.101.77.87']
+guide.hulu.com,Yes,['hulu.map.fastly.net.'],['151.101.229.87']
+aws.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.77.87']
+img1.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.229.87']
+espanol.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.109.87']
+venus.hulu.com,Yes,"['venus.hulu.com.akadns.net.', 'venus-east.hulu.com.akadns.net.']","['18.211.137.207', '35.174.159.149', '52.203.217.7']"
+plus.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.109.87']
+discover.hulu.com,Yes,"['san.dual-hulu.com.edgekey.net.', 'e1042.dscj.akamaiedge.net.']",['23.56.0.60']
+ariel.hulu.com,Yes,"['ariel.hulu.com.akadns.net.', 'ariel.aor.hulu.com.', 'diproton-play-prod-us-west-2.hulu.com.akadns.net.']","['34.218.104.58', '44.225.249.135', '52.39.208.93']"
+play.hulu.com,Yes,"['play.hulu.com.akadns.net.', 'play.las.hulu.com.']",['199.60.116.45']
+catalog.hulu.com,Yes,['diproton-exp-prod-us-east-1.hulu.com.akadns.net.'],"['3.227.101.128', '3.232.114.124', '3.234.95.192']"
+signup.hulu.com,Yes,"['sansecure.dual-hulu.com.edgekey.net.', 'e8297.dscj.akamaiedge.net.']",['23.74.129.166']
+transfer.hulu.com,Yes,"['transfer2.hulu.com.', 'transferlas.hulu.com.akadns.net.']",['8.28.124.48']
+client.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.109.87']
+jira.hulu.com,No,Null,['8.28.125.69']
+vpn2.hulu.com,No,Null,['199.200.49.252']
+vip.hulu.com,No,Null,['199.60.116.128']
+access.hulu.com,No,Null,['8.28.125.60']
+staging.hulu.com,No,Null,['208.91.157.31']
+lists.hulu.com,No,Null,['208.91.157.134']
+app.hulu.com,No,Null,['199.60.116.113']
+partners.hulu.com,Yes,['365-donki-pro-443-https-external-1169722286.us-west-2.elb.amazonaws.com.'],"['35.164.100.138', '52.41.22.170', '52.42.29.31']"
+alpha.hulu.com,Yes,['hulu.map.fastly.net.'],['151.101.229.87']
+pt.hulu.com,Yes,['pt.hulu.com.akadns.net.'],['208.91.159.35']
+autodiscover.hulu.com,No,"['autodiscover.outlook.com.', 'autod.ha-autod.office.com.', 'autod.ms-acdc-autod.office.com.']","['40.100.2.104', '40.100.2.120', '40.100.54.8', '52.98.37.40']"
+img.hulu.com,Yes,['dualstack.hulu.map.fastly.net.'],['151.101.229.87']
+tech.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.109.87']
+p.hulu.com,Yes,['p.hulu.com.akadns.net.'],"['52.35.103.95', '54.191.217.144', '54.68.211.132']"
+ask.hulu.com,Yes,"['hulu.cloud.answerhub.com.', 'awseb-awseb-1lqwkxmnejzf8-1351087279.us-east-1.elb.amazonaws.com.']","['3.212.71.209', '52.45.192.148', '54.172.65.166']"
+design.hulu.com,Yes,"['redirect.hulu.com.', 'hulu.map.fastly.net.']",['151.101.109.87']
+static.hulu.com,Yes,"['static.hulu.com.edgesuite.net.', 'a1752.b.akamai.net.']","['72.246.150.200', '72.246.150.203']"
+assets.hulu.com,Yes,"['assets.hulu-dual.huluipv6.com.akadns.net.', 'assets.hulu.com.edgesuite.net.', 'a1509.b.akamai.net.']","['23.44.51.27', '23.44.51.35']"
+beta.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.198.103.37']
+login.hulu.com,Yes,['login.hulu.com.akadns.net.'],['208.91.159.56']
+ads.hulu.com,Yes,"['san.dual-hulu.com.edgekey.net.', 'e1042.dscj.akamaiedge.net.']",['23.56.0.60']
+preview.hulu.com,Yes,"['san.dual-hulu.com.edgekey.net.', 'e1042.dscj.akamaiedge.net.']",['23.56.0.60']
+t.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.47.131.244']
+new.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.56.0.60']
+secure.hulu.com,Yes,"['sansecure.dual-hulu.com.edgekey.net.', 'e8297.dscj.akamaiedge.net.']",['23.74.129.166']
+www.hulu.com,No,"['san.huluqa.com.edgekey.net.', 'e11484.e12.akamaiedge.net.']",['23.74.147.56']
+s.hulu.com,Yes,"['san.hulu.com.edgekey.net.', 'e1042.e12.akamaiedge.net.']",['23.47.131.244']
+content.hulu.com,Yes,"['content.hulu.com.akadns.net.', 'content.aor.hulu.com.', 'diproton-exp-prod-us-west-2.hulu.com.akadns.net.']","['34.213.149.96', '34.216.110.194', '44.224.177.136']"
+webmail.hulu.com,No,"['mail.office365.com.', 'outlook.office365.com.', 'outlook.ha.office365.com.', 'outlook.ms-acdc.office.com.', 'HKG-efz.ms-acdc.office.com.']","['40.100.54.2', '40.100.54.34', '52.98.40.66', '52.98.77.98']"
+i.hulu.com,Yes,"['spotify-customer.ava.hulu.com.', 'diproton-subpay-prod-us-east-1.hulu.com.akadns.net.']","['3.220.99.100', '3.226.93.108', '34.235.19.163']"
+dl.hulu.com,Yes,"['origin-dl.hulu.com.akadns.net.', 'origin-dl.aor.hulu.com.', 'diproton-exp-prod-us-west-2.hulu.com.akadns.net.']","['34.213.149.96', '34.216.110.194', '44.224.177.136']"
+mail.hulu.com,No,['ghs.google.com.'],['172.217.1.19']
+docs.hulu.com,No,['ghs.google.com.'],['172.217.1.19']
+msoid.hulu.com,No,"['clientconfig.microsoftonline-p.net.', 'a.privatelink.msidentity.com.', 'prda.aadg.msidentity.com.', 'www.tm.a.prd.aadg.trafficmanager.net.']","['20.190.151.133', '20.190.151.134', '20.190.151.6', '20.190.151.67', '20.190.151.68', '20.190.151.69', '20.190.151.7', '20.190.151.70']"
+home.hulu.com,Yes,"['origin-home.hulu.com.', 'origin-home.hulu.com.akadns.net.', 'home.aor.hulu.com.', 'diproton-usr-prod-us-west-2.hulu.com.akadns.net.']","['34.212.111.15', '34.217.225.30', '52.43.192.37']"
+calendar.hulu.com,No,['ghs.google.com.'],['172.217.1.19']
+help.hulu.com,Yes,"['help.hulu.com.00d410000005saieaq.live.siteforce.com.', '75520.communities.salesforce.cdn.edgekey.net.', 'e27843.dsca.akamaiedge.net.', 'e27843.dsca.akamaiedge.net.0.1.cn.akamaiedge.net.']","['23.213.2.43', '23.213.2.96']"
+auth.hulu.com,Yes,"['auth.huluipv6.com.akadns.net.', 'dualstack.hulu.map.fastly.net.']",['151.101.109.87']
+community.hulu.com,Yes,"['community.hulu.com.00d410000005saieaq.live.siteforce.com.', '4.0p11l000000cbglsak.00d410000005saieaq.gslb.siteforce.com.']",['13.109.144.43']
+press.hulu.com,No,['press-hulu-com.go-vip.net.'],['192.0.66.112']
+careers.hulu.com,Yes,"['careers-hulu-com.talentbrew.com.', 'careers.hulu.com.edgekey.net.', 'e36195.b.akamaiedge.net.']","['23.44.51.163', '23.44.51.177']"
+vpn.hulu.com,Yes,"['vpn-geo.hulu.com.akadns.net.', 'vpn-geo.bjn.hulu.com.akadns.net.', 'vpn.las.hulu.com.', 'vpn7.hulu.com.']",['8.28.125.5']
+sip.hulu.com,No,['sipdir.online.lync.com.'],['52.113.64.147']
+u.hulu.com,Yes,"['redirect.huluqa.com.', 'hulu.map.fastly.net.']",['151.101.229.87']
+go.hulu.com,No,"['go.pardot.com.', 'pi.pardot.com.', 'pi-ue1.pardot.com.', 'pi.t.pardot.com.', 'pi-ue1-lba1.pardot.com.']",['52.202.69.186']
+lyncdiscover.hulu.com,No,['webdir.online.lync.com.'],['52.113.64.150']
+tw.i.hulu.com,Yes,"['tw.i.hulu.com.edgesuite.net.', 'a1280.b.akamai.net.']","['23.199.54.59', '23.199.54.74']"
+c.p.hulu.com,Yes,"['origin-c.p.hulu.com.', 'origin-c.p.hulu.com.akadns.net.']",['208.91.159.75']
+www.vip.hulu.com,No,['vip.hulu.com.'],['199.60.116.128']

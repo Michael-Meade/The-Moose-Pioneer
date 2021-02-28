@@ -36,3 +36,8 @@ The code for subdomain will always output the results of the scan in the follow 
 
 ```subdomain3/results/domain```
 Two ```csv``` files should be inside that directory after the scan, the subdomain class will then move the contents of that directory and move the files into the scan folder. 
+
+
+### Convert HTML to PDF. 
+I used https://www.aconvert.com/ to convert the HTML file to a new file named example.pdf. It is possible to convert HTML to 
+PDF in Python but I was unable to do it without installing a bunch of stuff. Which might waste valuable time so I used the site listed aboved. 

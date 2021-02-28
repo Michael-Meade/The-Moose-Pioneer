@@ -1,7 +1,9 @@
 import nmap3
 import json
 import sys
+# imports the utils class ( u.py )
 import u
+# imports the subdomain class ( sub.py )
 import sub
 import os
 
@@ -15,8 +17,8 @@ class Scan:
         # do:  self.nmap.nmap_version_detection(self.ip)aaaaa
         # For python to use the variable. WE NEED to have self. infront
         self.nmap = nmap3.Nmap()
-    def ssl_cert(self):
-        
+
+
     def service_version(self):
         # used to save the file
         # this is different then ip because
@@ -164,10 +166,21 @@ class Scan:
 
 
 
-#sub.Subdomain
-scan = Scan("utica.edu")
-scan.top_port_scan()
-scan.service_version()
-scan.dns_scan()
-s = sub.Subdomain("utica.edu")
-s.run()
+
+def basic_scan(domain):
+    # basic scan currently is able to:
+        # - Top port scan
+        # - Service scan
+        # - DNS scan
+        # - Subdomain3
+    scan = Scan(domain)
+    scan.top_port_scan()
+    scan.service_version()
+    scan.dns_scan()
+    s = sub.Subdomain(domain)
+    s.run()    
+
+
+
+
+basic_scan("hulu.com")

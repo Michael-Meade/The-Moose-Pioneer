@@ -4,9 +4,8 @@ import json
 import csv
 import sys
 import shutil
-import os
+# imports the utils class
 import u
-#import nmaps
 from datetime import date
 import time
 class Subdomain:

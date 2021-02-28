@@ -64,6 +64,9 @@ class Read:
         return r.read()
 
 class Template:
+    # the template class job is to create the rows of the HTML table
+    # The \n & \t needs to be there. This gives the HTML table 
+    # a pretty format. This makes it easier to edit the HTML report later.
     def port_scan(self, name, protocol, portid, state, reason):
         return "\t<tr>\n\t\t<td>" + name + "</td>\n" + "\t\t<td>" + protocol + "</td>\n" + '\t\t<td>' + portid + "</td>\n" + "\t\t<td>" + state + "</td>\n" + "\t\t<td>" + reason + "</td>\n\t</tr>\n" 
 
