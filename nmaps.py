@@ -1,71 +1,13 @@
 import nmap3
 import json
+import sys
+import u
+import sub
 import os
-class Read():
-    def html_start(self):
-        r = open("templates/html_template_start.html",'r')
-        return r.read()
-
-    def html_end(self):
-        r = open("templates/html_template_end.html",'r')
-        return r.read()
-
-    def html_table_end(self):
-        r = open("templates/html_table_template_end.html",'r')
-        return r.read()
-
-    def html_table_start(self):
-        r = open("templates/html_table_template_start.html",'r')
-        return r.read()
-    def html_table_start(self):
-        r = open("templates/html_table_template_start.html",'r')
-        return r.read()
-    def html_service_start(self):
-        r = open("templates/html_table_service.html",'r')
-        return r.read()
-    def html_table_dns_start(self):
-        r = open("templates/html_table_template_start_dns.html", "r")
-        return r.read()
-
-class Template():
-    def port_scan(self, name, protocol, portid, state, reason):
-        return "\t<tr>\n\t\t<td>" + name + "</td>\n" + "\t\t<td>" + protocol + "</td>\n" + '\t\t<td>' + portid + "</td>\n" + "\t\t<td>" + state + "</td>\n" + "\t\t<td>" + reason + "</td>\n\t</tr>\n" 
-
-    def service_scan(self, name, product, version, extrainfo, portid, state):
-        return "\t<tr>\n\t\t<td>" + name + "</td>\n" + "\t\t<td>" + product + "</td>\n" + "\t\t<td>" + version + "</td>\n" + "\t\t<td>" + extrainfo + "</td>\n" + "\t\t<td>" + portid + "</td>\n" + "\t\t<td>" + state + "</td>\n\t</tr>\n"
-
-    def dns_scan(self, address, hostname):
-        return "\t<tr>\n\t\t<td>" + address + "</td>\n" + "\t\t<td>" + hostname + "</td>\n\t</tr>\n"
-
-class FileUtils:
-    def __init__(self, ip):
-        self.ip = ip
-        # creaets an scan directory if 
-        # it does not exist. This is 
-        # where all the other stuff is stored.
-        # When the FileUtils class is called it will 
-        # create directories. 
-        self.create_directory("scans")
-        # creates a directry for the IP
-        self.create_directory(os.path.join("scans", ip))
 
 
-    def create_directory(self, name):
-        if not os.path.exists(name):
-            os.makedirs(name)
 
-    # Makes it easy to save the output to a text file
-    def write_text(self, file_name, data):
-        with open(os.path.join("scans", self.ip, file_name), 'a') as outfile:
-            outfile.write(data)
-
-    # Makes it easy to save the output to a json file. 
-    def write_json(self,ip,  file_name, data):
-        with open(os.path.join("scans", ip, file_name), 'w') as outfile:
-            json.dump(data, outfile)
-
-
-class Scan():
+class Scan:
     def __init__(self, ip):
         self.ip   = ip
         # creates an one instance of 
@@ -73,9 +15,8 @@ class Scan():
         # do:  self.nmap.nmap_version_detection(self.ip)aaaaa
         # For python to use the variable. WE NEED to have self. infront
         self.nmap = nmap3.Nmap()
-
-
-
+    def ssl_cert(self):
+        
     def service_version(self):
         # used to save the file
         # this is different then ip because
@@ -86,13 +27,13 @@ class Scan():
         result = self.nmap.nmap_version_detection(self.ip)
         ip   = list(result.keys())[0]
         scan = list(result[ip]["ports"])
-        write = FileUtils(ips)
-        t = Template()
+        write = u.FileUtils(ips)
+        t = u.Template()
         # this calls gets the Read() class
         # we store it as a instance variable 
         # so we can get the first half of the HMTL and
         # the last part of the HTML. 
-        r = Read()
+        r = u.Read()
         html_out = []
         #html_out.append(r.html_start())
         html_out.append("<br><br>")
@@ -119,9 +60,6 @@ class Scan():
                 version  = i['service']['version']
             else:
                 version  = "Null"
-
-            
-           
             
             ps = t.service_scan(name, product, version, extrainfo, portid, state)
             html_out.append(ps)
@@ -136,13 +74,13 @@ class Scan():
     def dns_scan(self):
         results = self.nmap.nmap_dns_brute_script(self.ip)
         ip      = self.ip
-        write   = FileUtils(ip)
-        t = Template()
+        write   = u.FileUtils(ip)
+        t = u.Template()
         # this calls gets the Read() class
         # we store it as a instance variable 
         # so we can get the first half of the HMTL and
         # the last part of the HTML. 
-        r = Read()
+        r = u.Read()
         html_out = []
         html_out.append("<br><br>")
         html_out.append(r.html_table_dns_start())
@@ -159,7 +97,6 @@ class Scan():
         html = '\n'.join(html_out)
         write.write_text("ports_scan.html", str(html))
 
-
     def top_port_scan(self):
         # this is for the file
         ips = self.ip
@@ -172,13 +109,13 @@ class Scan():
         # variable IP so we can use later.
         ip   = list(result.keys())[0]
         scan = list(result[ip]["ports"])
-        write = FileUtils(ips)
-        t = Template()
+        write = u.FileUtils(ips)
+        t = u.Template()
         # this calls gets the Read() class
         # we store it as a instance variable 
         # so we can get the first half of the HMTL and
         # the last part of the HTML. 
-        r = Read()
+        r = u.Read()
         html_out = []
         # adds the first part of the HTML file to
         # the list. like the CSS part, the html and body 
@@ -194,16 +131,13 @@ class Scan():
             if str(state) == "open":
                 open_port.append([ str(state), str(name), str(portid)])
 
-
             # Takes the input ( name, protocolm etc) and adds HTML to to make the 
             # rows of the tables
             ps = t.port_scan(name, protocol, portid, state, reason)
             # earlier in the code we called the html_start method
             # and storedi to in a list. We now add the rows of the HMTL table to 
             # the list
-
             html_out.append(ps)
-
 
         msg  = "<center><font color=white>The table below shows the results of the port scan on (IP).<br></font></center>"
         html_out.append(str(msg.replace("(IP)", ip)))
@@ -228,8 +162,12 @@ class Scan():
         msg_list.append("<br><br>")
         write.write_text("ports_scan.html", str(html))
 
+
+
+#sub.Subdomain
 scan = Scan("utica.edu")
 scan.top_port_scan()
 scan.service_version()
 scan.dns_scan()
-#scan.list_scan()
+s = sub.Subdomain("utica.edu")
+s.run()
