@@ -4,7 +4,7 @@
 
 ### scans folder
 
-The scan folder is where all the results of the scan go for that domain. Inside the scans directory the code will create a new folder of the domain or IP that was inputed. For example, if we scan the IP 127.0.0.1 the code will create a new directory inside the scans folder with the name of 127.0.0.1. Inside 127.0.0.1 is where the program will store all the results.
+The scan folder is where all the results of the scan go for that domain. Inside the scans directory the code will create a new folder of the domain or IP that was inputed. For example, if we scan the IP 127.0.0.1 the code will create a new directory inside the scans folder with the name of 127.0.0.1. Inside the  127.0.0.1 directory is where the program will store all the results.
 
 
 ### Template class
@@ -21,8 +21,11 @@ This class is used for creating the output. It currently supports, JSON and text
 It is assumed that subdomain3 is already installed. You might need to remove the subdomain3 directory and download the current version.  Support to have it auto install will most likely be added at a later time
 You could use the following command or go to <a href="https://github.com/yanxiu0614/subdomain3">subdomain3</a>
 
+# Installing
 ```
 git clone https://github.com/yanxiu0614/subdomain3.git
+cd subdomain3
+pip install -r requirement.txt
 ```
 
 This project assumes that the subdomain3 directory is in the projects main directory. This is important becuase the subdomain.py file will use Python's ```os``` module to cd into the subdomain3 directory. The subdomain class currently has one command but others can be added later. By default the class will use & run the following command:

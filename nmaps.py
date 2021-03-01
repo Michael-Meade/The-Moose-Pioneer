@@ -6,18 +6,14 @@ import u
 # imports the subdomain class ( sub.py )
 import sub
 import os
-
-
-
 class Scan:
     def __init__(self, ip):
         self.ip   = ip
         # creates an one instance of 
         # nmap so we all we have to do is
-        # do:  self.nmap.nmap_version_detection(self.ip)aaaaa
+        # do:  self.nmap.nmap_version_detection(self.ip)
         # For python to use the variable. WE NEED to have self. infront
         self.nmap = nmap3.Nmap()
-
 
     def service_version(self):
         # used to save the file
@@ -68,6 +64,7 @@ class Scan:
         
         html_out.append(r.html_table_end())
         msg = "<center><font color=white>The table above shows more information about the services that are running on (IP).</font></center>"
+        # replaces (IP) with the address of the host being scanned.
         html_out.append(msg.replace("(IP)", ip))
         html_out.append(r.html_end())
         html = '\n'.join(html_out)
@@ -93,6 +90,7 @@ class Scan:
             html_out.append(dns)
 
         msg  = "<center><font  color=white>The table below shows the results of the DNS scan of (IP).<br></font></center>"
+        # replaces '(IP)' with the Ip of the host
         html_out.append(str(msg.replace("(IP)", ip)))
         html_out.append(r.html_table_end())
         html_out.append(r.html_end())
@@ -183,4 +181,4 @@ def basic_scan(domain):
 
 
 
-basic_scan("hulu.com")
+#basic_scan("hulu.com")
