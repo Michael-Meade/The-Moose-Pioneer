@@ -152,15 +152,15 @@ class Scan:
                 msg_list.append(str(msg3.replace("(SERVICE)", i[1]).replace("(PORT)", i[2])))
 
 
-        msg_port = ' '.join(msg_list)
-        html = '\n'.join(html_out)
-        html_out.append(msg_port)
-        html_out.append("</center>")
-        html = '\n'.join(html_out)
-        #html_out.append(r.html_end())
-        html = '\n'.join(html_out)
-        msg_list.append("<br><br>")
-        write.write_text("ports_scan.html", str(html))
+            msg_port = ' '.join(msg_list)
+            html = '\n'.join(html_out)
+            html_out.append(msg_port)
+            html_out.append("</center>")
+            html = '\n'.join(html_out)
+            #html_out.append(r.html_end())
+            html = '\n'.join(html_out)
+            msg_list.append("<br><br>")
+            write.write_text("ports_scan.html", str(html))
 
 
 
