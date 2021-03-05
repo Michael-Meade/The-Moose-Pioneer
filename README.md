@@ -22,7 +22,19 @@ It is assumed that subdomain3 is already installed. You might need to remove the
 You could use the following command or go to <a href="https://github.com/yanxiu0614/subdomain3">subdomain3</a>
 
 # Installing
+
+This project was coded and testing using Python version ```Python 3.6.8```.
+
 Nmap <b>has </b> to be installed. The Nmap downloads can be found at: <a href="https://nmap.org/download.html">https://nmap.org</a>
+
+The following command is needed to install the needed Python modules.
+```
+pip install python3-nmap
+```
+
+More information about python3-nmap can be found <a href="https://github.com/nmmapper/python3-nmap"> here</a>.
+
+
 ```
 git clone https://github.com/yanxiu0614/subdomain3.git
 cd subdomain3
