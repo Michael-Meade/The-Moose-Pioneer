@@ -40,7 +40,7 @@ git clone https://github.com/yanxiu0614/subdomain3.git
 cd subdomain3
 pip install -r requirement.txt
 ```
-
+<b> YOU WILL HAVE TO GIT CLONE SUBDOMAIN2 in the same directory as the other scripts</b>
 This project assumes that the subdomain3 directory is in the projects main directory. This is important becuase the subdomain.py file will use Python's ```os``` module to cd into the subdomain3 directory. The subdomain class currently has one command but others can be added later. By default the class will use & run the following command:
 
 ```
