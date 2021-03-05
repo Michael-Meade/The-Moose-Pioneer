@@ -181,4 +181,4 @@ def basic_scan(domain):
 
 
 
-#basic_scan("hulu.com")
+basic_scan("hulu.com")

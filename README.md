@@ -40,7 +40,7 @@ git clone https://github.com/yanxiu0614/subdomain3.git
 cd subdomain3
 pip install -r requirement.txt
 ```
-<b> YOU WILL HAVE TO GIT CLONE SUBDOMAIN2 in the same directory as the other scripts</b>
+<b> YOU WILL HAVE TO GIT CLONE SUBDOMAIN2 in the same directory as the other scripts</b><br><br>
 This project assumes that the subdomain3 directory is in the projects main directory. This is important becuase the subdomain.py file will use Python's ```os``` module to cd into the subdomain3 directory. The subdomain class currently has one command but others can be added later. By default the class will use & run the following command:
 
 ```
@@ -57,3 +57,11 @@ Two ```csv``` files should be inside that directory after the scan, the subdomai
 ### Convert HTML to PDF. 
 I used https://www.aconvert.com/ to convert the HTML file to a new file named example.pdf. It is possible to convert HTML to 
 PDF in Python but I was unable to do it without installing a bunch of stuff. Which might waste valuable time so I used the site listed aboved. 
+
+
+
+### Running it
+
+```
+python nmaps.py
+```
