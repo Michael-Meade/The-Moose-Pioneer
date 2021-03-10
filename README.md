@@ -38,7 +38,7 @@ More information about python3-nmap can be found <a href="https://github.com/nmm
 ```
 git clone https://github.com/yanxiu0614/subdomain3.git
 cd subdomain3
-pip install -r requirement.txt
+pip3/2 install -r requirement.txt
 ```
 <b> YOU WILL HAVE TO GIT CLONE SUBDOMAIN2 in the same directory as the other scripts</b><br><br>
 This project assumes that the subdomain3 directory is in the projects main directory. This is important becuase the subdomain.py file will use Python's ```os``` module to cd into the subdomain3 directory. The subdomain class currently has one command but others can be added later. By default the class will use & run the following command:
@@ -61,10 +61,14 @@ PDF in Python but I was unable to do it without installing a bunch of stuff. Whi
 
 
 ### Running it
+You might need to install gevent. To install gevent use the following command:
+```pip3/2 install gevent```
 
+To run the program run the following command.
 ```
 python nmaps.py
 ```
+This will run everything that is needed. It will run all the possible nmap scans and will use the subs.py class to run the subdomain3 code. After the code is ran, go to the scans directory and find the folder that matches the host IP given. Inside that directory will be a html file and a few csv's.
 
 ### What does it do?
 
