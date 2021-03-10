@@ -175,8 +175,11 @@ def basic_scan(domain):
     scan.top_port_scan()
     scan.service_version()
     scan.dns_scan()
-    s = sub.Subdomain(domain)
-    s.run()    
+    try:
+        s = sub.Subdomain(domain)
+        s.run()  
+    except:
+        print("error with subdomain3.")
 
 
 

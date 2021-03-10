@@ -65,3 +65,10 @@ PDF in Python but I was unable to do it without installing a bunch of stuff. Whi
 ```
 python nmaps.py
 ```
+
+### What does it do?
+
+The user scans a site named example.com. The output will be saved to:
+```
+\scans\example.com
+```
