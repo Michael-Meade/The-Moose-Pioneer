@@ -1,6 +1,7 @@
 import requests
 # import the utils class
 import u
+import optparse
 import threading
 # this class can be used to save the results from
 # the scan in a txt file. Later after the scan
@@ -37,6 +38,7 @@ class DirScanner():
         try:
             r       = requests.get(self.ip + web_path)
             status  = r.status_code
+            print(self.ip + web_path)
             # if the server comes back with a 200 code 
             # then it will save the web path.
             # we used the int method to convert the 
@@ -44,6 +46,8 @@ class DirScanner():
             if int(status) == 200:
                 # removes https & http from ip so we we can create a file
                 new_ip = self.ip.replace("https://", "").replace("http://", "").replace("/", "")
+                # add the new_ip & web path together to make a varaible 
+                # named url
                 url = str(new_ip) + "/" + str(web_path)
                 DirScanReports(new_ip, str(url)).write_file()
 
@@ -63,6 +67,29 @@ class DirScanner():
             t1.start()
 
 
+def main():
+    parser = optparse.OptionParser("usage: python3 dir_scanner.py -H <host>")
+    parser.add_option("-H", dest='ip', type="string", help="IP")
+    (options, args) = parser.parse_args()
+    # creates strings with the values of the input
+    ip   = options.ip
+    # checks to make sure they are not empty
+    if (ip == None):
+        print(parser.usage)
+        exit(0)
+    else:
+        # this gets the last char of the
+        # ip variable and if it is not a "/"
+        # then it will add one to the ip. 
+        if ip[-1] != "/":
+            ip = ip + "/"
 
-d = DirScanner("https://utica.edu/")
-d.run()
+
+
+        d = DirScanner(ip)
+        d.run()
+
+
+
+if __name__ == '__main__':
+    main()
