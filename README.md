@@ -8,16 +8,18 @@ The scan folder is where all the results of the scan go for that domain. Inside 
 
 
 ### Template class
+(u.py)
 The template class is where we create the HTML table rows. The script will parse the JSON file of the results scan and create a HTML row. The script will append each row of the HTML table into a list. At the very end we join each element of the list and create the table. Each method in this class is used for a certain task. Currently, as of 2/24/2021 the script is able to create HTML tables for:
 port_scan, service_scan, dns_scan. 
 
 
 ### FileUtils class
+(u.py)
 This class is used for creating the output. It currently supports, JSON and text. But it could output a file in any extension because you could name the file any name and it is assumed that when the programmer uses the method that they also include an file extension. 
 
 
 ### Subdomain3
-
+(sub.py)
 It is assumed that subdomain3 is already installed. You might need to remove the subdomain3 directory and download the current version.  Support to have it auto install will most likely be added at a later time
 You could use the following command or go to <a href="https://github.com/yanxiu0614/subdomain3">subdomain3</a>
 
