@@ -19,15 +19,15 @@ class DirScanner():
             print(status)
             if int(status) == 200:
                  print("UP")
-        except as e:
-            print(e)
+
+        except:
+            print("error.")
 
 
     def run(self):
         file = open("lists/dirsearch.txt", 'r')
         line = file.readlines()
         for l in line:
-            self.scan(l)
             t1 = threading.Thread(target =self.scan(l))
             t1.start()
 
