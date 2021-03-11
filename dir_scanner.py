@@ -1,6 +1,31 @@
 import requests
+# import the utils class
+import u
 import threading
+# this class can be used to save the results from
+# the scan in a txt file. Later after the scan
+# it will read the dir_scan.txt file and create 
+# a HTML File. The plan is to 
+class DirScanReports():
+    def __init__(self, ip, web_path):
+        self.ip       = ip
+        self.web_path = web_path
 
+    def write_file(self):
+        write = u.FileUtils(self.ip)
+        write.write_text("dir_scan.txt", str(self.web_path) + "\n")
+
+
+# this is the class that does the Scanning.
+# The scan method uses multi thread to make 
+# the scan faster. If the status code is 200
+# the code will save the file path to the file
+# using the reports class.
+# the code will rescue any errors that are 
+# because of to many redirects.  
+# NOTE: it might be possible to increase the
+# amount of redirects  
+# 
 class DirScanner():
     def __init__(self, ip):
         self.ip   = ip
@@ -16,18 +41,24 @@ class DirScanner():
             # then it will save the web path.
             # we used the int method to convert the 
             # status into an integer
-            print(status)
             if int(status) == 200:
-                 print("UP")
+                # removes https & http from ip so we we can create a file
+                new_ip = self.ip.replace("https://", "").replace("http://", "").replace("/", "")
+                url = str(new_ip) + "/" + str(web_path)
+                DirScanReports(new_ip, str(url)).write_file()
 
-        except:
-            print("error.")
+        except requests.exceptions.TooManyRedirects as f:
+            print(f)
 
-
+    # This needs to be called
     def run(self):
+        # reads from the dir list.
+        # In the future it would
+        # be cool to add more lists
         file = open("lists/dirsearch.txt", 'r')
         line = file.readlines()
         for l in line:
+            # thread it
             t1 = threading.Thread(target =self.scan(l))
             t1.start()
 

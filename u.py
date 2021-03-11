@@ -11,6 +11,7 @@ class FileUtils:
         # create directories. 
         self.create_directory("scans")
         # creates a directry for the IP
+        print(self.ip)
         self.create_directory(os.path.join("scans", ip))
 
 
