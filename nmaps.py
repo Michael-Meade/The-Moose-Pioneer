@@ -44,12 +44,10 @@ class Scan:
             else:
                 product   = "Null"
 
-
             if 'extrainfo' in i['service']:
                 extrainfo = i['service']['extrainfo']
             else:
                 extrainfo = "Null"
-
 
             if 'version' in i['service']:
                 version  = i['service']['version']
@@ -150,7 +148,7 @@ class Scan:
 
 
             msg_port = ' '.join(msg_list)
-            html = '\n'.join(html_out)
+            html     = '\n'.join(html_out)
             html_out.append(msg_port)
             html_out.append("</center>")
             html = '\n'.join(html_out)
@@ -158,15 +156,6 @@ class Scan:
             msg_list.append("<br><br>")
             write.write_text("ports_scan.html", str(html))
 
-
-    def arp_scan(self):
-        # used to save the file
-        # this is different then ip because
-        # the variable ip gets its result from 
-        # the scan results.
-        ips = self.ip
-        results = self.nmap.NmapHostDiscovery()(ips, args="-sSU -p 53 --script dns-nsid")
-        print(results)
 
 def basic_scan(domain):
     # basic scan currently is able to:
@@ -188,6 +177,5 @@ def basic_scan(domain):
 
 
 
-#basic_scan("hulu.com")
-scan = Scan("utica.edu")
-scan.dns_nsid()
+basic_scan("utica.edu")
+#scan = Scan("utica.edu")

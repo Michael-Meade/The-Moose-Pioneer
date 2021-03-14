@@ -1,0 +1,57 @@
+DOMAIN,CDN,CNAME,IP
+asa.utica.edu,No,Null,PRIVATE(10.1.0.1)
+gaia.utica.edu,No,Null,['72.237.4.90']
+lb1.utica.edu,No,Null,PRIVATE(10.0.1.161)
+hero.utica.edu,No,Null,['52.45.51.21']
+angel.utica.edu,No,Null,['69.196.251.99']
+vpn3.utica.edu,No,Null,['72.237.4.243']
+drupal.utica.edu,No,['webserver3.utica.edu.'],PRIVATE(192.168.25.19)
+engage.utica.edu,No,Null,"['23.22.24.77', '34.199.227.145', '34.232.114.20', '34.238.217.124', '52.5.6.228', '54.158.192.249']"
+cacti.utica.edu,No,Null,PRIVATE(10.3.1.49)
+tm.utica.edu,No,Null,['72.237.4.106']
+banner.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+imail.utica.edu,No,['sz001.utica.edu.'],['72.237.4.118']
+admissions.utica.edu,No,Null,['72.237.4.113']
+nagios.utica.edu,No,Null,PRIVATE(10.3.1.48)
+password.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+listserv.utica.edu,No,['mailman.utica.edu.'],['72.237.4.121']
+prod.utica.edu,No,"['borc1.utica.edu.', 'ban-db-01.utica.edu.']",PRIVATE(192.168.25.143)
+maps.utica.edu,No,Null,PRIVATE(10.3.10.89)
+st.utica.edu,No,Null,PRIVATE(10.3.1.47)
+pm.utica.edu,No,Null,PRIVATE(10.3.1.115)
+reg.utica.edu,No,Null,PRIVATE(10.3.10.81)
+labs.utica.edu,No,['irp.utica.edu.'],['72.237.4.75']
+cas.utica.edu,No,Null,['72.237.4.103']
+software.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+mailman.utica.edu,No,Null,['72.237.4.121']
+mailhost.utica.edu,No,['smtp.utica.edu.'],['72.237.4.96']
+status.utica.edu,No,Null,['72.237.4.24']
+connect.utica.edu,No,Null,['72.237.4.20']
+cloud.utica.edu,No,Null,['72.237.4.58']
+ldap.utica.edu,No,['gaia.utica.edu.'],['72.237.4.90']
+ems.utica.edu,No,Null,['72.237.4.192']
+chat.utica.edu,No,Null,['72.237.4.8']
+cs.utica.edu,No,Null,['4.26.24.234']
+lists.utica.edu,No,Null,['72.237.4.121']
+online.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+mysql.utica.edu,No,Null,PRIVATE(192.168.25.9)
+test.utica.edu,No,['borc2.utica.edu.'],PRIVATE(192.168.25.155)
+webmail.utica.edu,No,Null,['72.237.4.113']
+helpdesk.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+mail.utica.edu,No,Null,['72.237.4.113']
+smtp.utica.edu,No,Null,['72.237.4.96']
+www.utica.edu,No,Null,['72.237.4.113']
+vpn2.utica.edu,No,Null,['72.237.4.242']
+ns2.utica.edu,No,Null,['72.237.4.102']
+sso.utica.edu,No,Null,['72.237.4.216']
+catalog.utica.edu,Yes,"['utica.catalog.acalog.com.', 'hera-a.aws.acalog.com.', 'acalog-production-dir-a5e6d42e834822a9.elb.us-east-1.amazonaws.com.']","['18.215.95.201', '3.208.11.34']"
+vpn.utica.edu,No,Null,['72.237.4.252']
+ns1.utica.edu,No,Null,['72.237.4.100']
+library.utica.edu,No,['www.utica.edu.'],['72.237.4.113']
+beta.utica.edu,No,Null,['72.237.4.119']
+m.catalog.utica.edu,Yes,"['utica.catalog.acalog.com.', 'hera-a.aws.acalog.com.', 'acalog-production-dir-a5e6d42e834822a9.elb.us-east-1.amazonaws.com.']","['18.215.95.201', '3.208.11.34']"
+m.online.utica.edu,No,Null,['72.237.4.113']
+redmine.cs.utica.edu,No,Null,['4.26.24.234']
+www.cs.utica.edu,No,Null,['4.26.24.234']
+ns2.cs.utica.edu,No,Null,['4.26.24.234']
+ns1.cs.utica.edu,No,Null,['4.26.24.234']

@@ -51,18 +51,19 @@ class Subdomain:
         html_out = []
         #html_out.append(r.html_start())
         html_out.append("<br><br>")
-
+        msg = "<center><font color=white>Subdomains</font></center>"
+        html_out.append(msg)
         html_out.append(r.html_table_subdomain_start())
         for i in csv_r:
             ip     = i["IP"]
             domain = i["DOMAIN"]
             cdn    = i["CDN"]
             cname  = i["CNAME"]
-            ps = t.subdomain(ip, domain, cdn, cname)
+            ps = t.subdomain(str(ip), domain, cdn, cname)
             html_out.append(ps)
 
         html_out.append(r.html_table_end())
-        msg = "<font color=white>The table above is the results from the Subdomain3 scan.</font>"
+        msg = "<center><font color=white>The table above is the results from the Subdomain3 scan.</font></center>"
         html_out.append(msg)
         html_out.append(r.html_end())
         html = '\n'.join(html_out)
