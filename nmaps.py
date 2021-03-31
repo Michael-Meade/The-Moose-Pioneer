@@ -149,7 +149,7 @@ class Scan:
 
             msg_port = ' '.join(msg_list)
             html     = '\n'.join(html_out)
-            html_out.append(msg_port)
+            html_out.append(msg_port) 
             html_out.append("</center>")
             html = '\n'.join(html_out)
             html = '\n'.join(html_out)

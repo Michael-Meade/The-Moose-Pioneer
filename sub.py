@@ -14,7 +14,7 @@ class Subdomain:
 
     def command(self):
         # replaces "targetdomain" w/ the domain inputed.
-        return "cd subdomain3 & python brutedns.py -d targetdomain -s high -l 5".replace("targetdomain", self.domain)
+        return "cd subdomain3; python brutedns.py -d targetdomain -s high -l 5".replace("targetdomain", self.domain)
 
     def move_results(self):
         source = os.path.join("subdomain3", "result", self.domain)
